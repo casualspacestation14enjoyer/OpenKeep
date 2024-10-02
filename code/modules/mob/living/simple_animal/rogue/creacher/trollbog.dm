@@ -53,6 +53,40 @@
 	body_eater = TRUE
 	var/critvuln = FALSE
 
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/goblinking
+	name = "GOBLIN KING"
+	desc = "A construction of flesh animated by foul magicks, the flesh already rotting and only holding together by sutures. If fallen, there are many heirs."
+	icon_state = "KING"
+	icon_living = "KING"
+	icon_dead = "KINGd"
+	gender = MALE
+	emote_hear = null
+	emote_see = null
+	base_intents = list(/datum/intent/simple/headbutt, /datum/intent/simple/bigbite)
+	health = 600
+	maxHealth = 600
+	melee_damage_lower = 40
+	melee_damage_upper = 60
+	critvuln = FALSE
+	body_eater = FALSE // Nobles are not animals.
+	STACON = 12
+	STASTR = 20
+	STASPD = 2
+	STAEND = 20
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/goblinking/LoseTarget()
+	if(health > 0)
+		icon_state = "KINGs"
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/goblinking/GiveTarget()
+	icon_state = "KING"
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/goblinking/death(gibbed)
+	..()
+	if(prob(1))
+		new /obj/item/clothing/head/roguetown/crown/circlet/gobleen/rareasf(get_turf(loc))
+	else
+		new /obj/item/clothing/head/roguetown/crown/circlet/gobleen(get_turf(loc))
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/Initialize()
 	. = ..()

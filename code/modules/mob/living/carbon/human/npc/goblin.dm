@@ -390,6 +390,8 @@
 	if(moon_goblins == 1)
 		new /mob/living/carbon/human/species/goblin/npc/moon(get_turf(src))
 	else
+		if(prob(10))
+			new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/goblinking(get_turf(src))
 		new /mob/living/carbon/human/species/goblin/npc(get_turf(src))
 	gobs++
 	update_icon()

@@ -326,6 +326,15 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	sellprice = 50
 
+/obj/item/clothing/head/roguetown/crown/circlet/gobleen
+	name = "golden crown"
+	desc = "A crown fit for a beast king."
+	sellprice = 70
+
+/obj/item/clothing/head/roguetown/crown/circlet/gobleen/rareasf
+	desc = "A crown fit for a king. The gold is remarkably high quality."
+	sellprice = 570
+
 /obj/item/clothing/head/roguetown/nyle
 	name = "jewel of nyle"
 	icon_state = "nile"
